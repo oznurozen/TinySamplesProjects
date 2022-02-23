@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #fea82f;
+            margin-left: 25%;
+        }
+        div{
+            text-align: center;
+            background-color: #ffc288;
+            width: 500px;
+            padding: 30px; 
+            border: 5px solid rgb(0, 0, 0);
+            padding: 25px;
+            margin-top: 70px;
+        }
+        h1, h3{
+            color: rgb(0, 0, 0);
+        }
+        span{
+            float:left;
+            padding:0 10px;
+            background-color:#fcecdd; 
+            margin-left:10px;
+            margin-top:-60px; 
+            display:block;
+            font-size:24px;
+        }
+        caption{
+            font-size: 20px;
+
+        }
+        table{
+            font-size: 20px;
+        }
+        input{
+            background-color:#fcecdd;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            color: rgb(136, 136, 0);
+        }
+        textarea{
+            background-color:#fcecdd;
+            color: rgb(136, 136, 0);
+        }
+        button {
+            border: none;
+            color: white;
+            background-color: #ff6701;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 2px solid #000000;
+        }
+    </style>
+    <script>
+        function ebobBulma(a,b){
+        var a=parseFloat(document.form_1.a.value);
+        var b=parseFloat(document.form_1.b.value);
+        let ebob;
+        if( a > b){
+            ebob = b;   
+        }
+        else{
+            ebob = a;
+        }
+        while(a % ebob != 0 || b % ebob !=0){
+            ebob--;
+        }
+        document.getElementById("sonuc_2").innerHTML="Girdiğiniz sayıların ebob'u:"+ebob ;
+        return ebob;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1><span>EBOB HESAPLAYICI</span></h1>
+        <h3>1 den büyük doğal sayı giriniz...</h3>
+        <form name="form_1">
+            <table >
+                <tr>
+                    <td><h3>Birinci sayiyi giriniz:</h3></td>
+                    <td><input class="giris-yap" type="number" name="a"></td>
+                </tr>
+                <tr>
+                    <td><h3>İkinci sayiyi giriniz:</h3></td>
+                    <td><input class="giris-yap" type="number" name="b" ></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="button" onclick="ebobBulma()">Hesapla</button>
+                                    <button type="reset">Temizle</button>
+                    </td>  
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <textarea class="giris-yap" cols="60" rows="6" name="sonuc" id="sonuc_2"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
