@@ -1,4 +1,3 @@
-# Calculator
-## Ebob Calculator
+# Progrest Bar
 <img src="progrestBar.PNG">
 
