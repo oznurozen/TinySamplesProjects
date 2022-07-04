@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+          background-color: #eaa031;
+        }
+        #skills {
+          padding: 80px 0;
+        }
+
+        #skills .progress {
+          height: 20px;
+          width: 500px;
+          margin-bottom: 10px;
+        }
+        #skills .progress .skill {
+          font-family: "Open Sans", sans-serif;
+          line-height: 35px;
+          padding: 0;
+          margin: 0 0 0 20px;
+          text-transform: uppercase;
+        }
+        #skills .progress .skill .val {
+          float: right;
+          font-style: normal;
+          margin: 0 20px 0 0;
+        }
+        #skills .progress-bar {
+          width: 1px;
+          text-align: left;
+          transition: 5.0s;
+        }
+  </style>
+     
+</head>
+<body>
+  <section id="skills">
+    <div class="container">
+      <div class="skills-content">
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <span class="skill">HTML <i class="val">100%</i></span>
+          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+            <span class="skill">CSS <i class="val">90%</i></span>
+          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <span class="skill">JavaScript <i class="val">75%</i></span>
+          </div>
+        </div>
+
+        <div class="progress">
+          <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+            <span class="skill">Photoshop <i class="val">55%</i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+        
+  </section>
+    
+      <script>
+                $('#skills').waypoint(function() {
+        $('.progress .progress-bar').each(function() {
+            $(this).css("width", $(this).attr("aria-valuenow") + '%');
+        });
+        }, { offset: '80%'} );
+      </script>
+      <script src="jquery.min.js"></script>
+      <script src="superfish.min.js"></script>
+      <script src="wow.min.js"></script>
+      <script src="waypoints.min.js"></script>
+      <script src="jquery.touchSwipe.min.js"></script>
+      <script src="main.js"></script>
+
+
+</body>
+</html>
