@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #004aad;
+        }
+        div{
+            text-align: center;
+            background-color: #ff914d;
+            width: 500px;
+            padding: 30px; 
+            border: 5px solid rgb(0, 0, 0);
+            padding: 25px;
+            margin-top: 70px;
+        }
+        h1, h3{
+            color: rgb(0, 0, 0);
+        }
+        span{
+            float:left;
+            padding:0 10px;
+            background-color:#545454; 
+            margin-left:10px;
+            margin-top:-60px; 
+            display:block;
+            font-size:24px;
+        }
+        caption{
+            font-size: 20px;
+
+        }
+        table{
+            font-size: 20px;
+        }
+        input{
+            background-color:#545454;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            color: beige;
+        }
+        textarea{
+            background-color:#545454;
+            color: beige;
+        }
+        button {
+            border: none;
+            color: white;
+            background-color: #004aad;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 2px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <h1><span>Ekok Hesaplayıcı</span></h1>
+               
+                <h3>1 den büyük doğal sayı giriniz...</h3>
+                <form name="form_2">
+                <table >
+                <tr>
+                    <td><h3>Birinci sayiyi giriniz:</h3></td>
+                    <td><input class="giris-yap" type="number" name="a"></td>
+                </tr>
+                <tr>
+                    <td><h3>İkinci sayiyi giriniz:</h3></td>
+                    <td><input class="giris-yap" type="number" name="b" ></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="button" onclick="ekokbulma(),obebBulma()">Hesapla</button>
+                                    <button type="reset">Temizle</button>
+                    </td>  
+                </tr>
+                <tr><td colspan="2"><textarea class="giris-yap" cols="60" rows="6" name="sonuc" id="sonuc_1"></textarea></td></tr>
+                </table>
+            </form>
+        </div>
+    </center>
+
+    <script>
+      function ekokbulma(a,b){
+        var a=parseFloat(document.form_2.a.value);
+        var b=parseFloat(document.form_2.b.value);
+        let ekok;
+        
+        if(a > b){             // a>b ise ekok a ya eşit olabilir
+             ekok = a;
+        
+            }
+        else{           // eğr a b den büyük  değil ise ekok u b ye eşitle
+            ekok = b;
+            }
+        while(ekok % a != 0 || ekok % b != 0){ //ekok mod a ya bölündüğü zaman 0 a 
+                                               //eşitse|| veya eok mod b ye bölündüğü zaman 0 a eşit değilse
+            ekok++;                            // ekok devamlı artar
+            }
+         document.getElementById("sonuc_1").innerHTML="Girdiğiniz sayıların ekok'u:"+ekok ;
+         return ekok;         //ekoku döndür
+             
+        }
+        
+    </script>
+</body>
+</html>
