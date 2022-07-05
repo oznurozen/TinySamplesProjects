@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asal Sayı mı?</title>
+
+<style>
+    body{
+        background-color: #4d4d4d;
+    }
+    div{
+        padding: 250px;
+    }
+    h1,h4{
+        font-family: fantasy;
+        color: white;
+    }
+    table{
+        width: 350px;
+        border: 21px inset #E84545;
+        background: #2B2E4A;
+        border-radius: 46px 46px 46px 46px;
+        -webkit-border-radius: 46px 46px 46px 46px;
+        -moz-border-radius: 46px 46px 46px 46px;
+    }
+    input, textarea{
+        background-color:#53354A;
+    }
+    button {
+    background-color: #903749; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px; 
+    }
+</style>
+
+<script>
+    function hesapla(){
+    var sonuc=1; //sonuc==0 ise asal değil sonuc==1 ise asal
+    var sayi_1=parseInt(document.form_1.sayi.value);
+
+    for(var i=2; i<sayi_1;i++){
+        if(sayi_1%i==0)
+        {
+            sonuc=0;
+            break;
+        }
+    }
+    if(sonuc==1){
+        document.getElementById("sonuc").innerHTML="Girilen sayı asaldır...";
+    }else if(sonuc==0){
+        document.getElementById("sonuc").innerHTML="Girilen sayı asal değildir...";
+    }
+    }
+</script>
+</head>
+
+<body> 
+<div>
+<center>
+<h1>1 den büyük bir doğal sayı giriniz...</h1>
+<form name="form_1">
+<table>
+<tr><td><h4>Bir sayı giriniz:</h4></td><td><input type="number" name="sayi"></td></tr>
+<tr><td colspan="2" align="center"><button type="button" onclick="hesapla()">Hesapla</button></td></tr>
+<tr><td colspan="2" align="center"><textarea cols="35" rows="5" name="sonuc" id="sonuc"></textarea></td></tr>
+</table>
+</form>
+</center>
+</div>
+</body>
+</html>
