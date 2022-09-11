@@ -1,0 +1,19 @@
+img{
+    width: 100%;
+    z-index: 2;
+}
+.animation{
+    height: 100%;
+    left: 50%;
+    max-width: 74%;
+    max-height: 54%;
+    position: absolute;
+    top: 47%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+   
+}
+video{
+    width: 100%; 
+    z-index: 1;
+}
